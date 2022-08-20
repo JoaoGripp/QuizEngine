@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		F8F0DB4B28B00A55001C34EC /* QuizEngine.docc in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DB4A28B00A55001C34EC /* QuizEngine.docc */; };
 		F8F0DB5128B00A55001C34EC /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F0DB4628B00A55001C34EC /* QuizEngine.framework */; };
-		F8F0DB5628B00A55001C34EC /* QuizEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DB5528B00A55001C34EC /* QuizEngineTests.swift */; };
-		F8F0DB5728B00A55001C34EC /* QuizEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = F8F0DB4928B00A55001C34EC /* QuizEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8F0DB6128B00ABC001C34EC /* FlowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DB6028B00ABC001C34EC /* FlowTest.swift */; };
+		F8F0DB6328B00BDA001C34EC /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DB6228B00BDA001C34EC /* Flow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,10 +25,10 @@
 
 /* Begin PBXFileReference section */
 		F8F0DB4628B00A55001C34EC /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8F0DB4928B00A55001C34EC /* QuizEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuizEngine.h; sourceTree = "<group>"; };
 		F8F0DB4A28B00A55001C34EC /* QuizEngine.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = QuizEngine.docc; sourceTree = "<group>"; };
 		F8F0DB5028B00A55001C34EC /* QuizEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8F0DB5528B00A55001C34EC /* QuizEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEngineTests.swift; sourceTree = "<group>"; };
+		F8F0DB6028B00ABC001C34EC /* FlowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTest.swift; sourceTree = "<group>"; };
+		F8F0DB6228B00BDA001C34EC /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +71,8 @@
 		F8F0DB4828B00A55001C34EC /* QuizEngine */ = {
 			isa = PBXGroup;
 			children = (
-				F8F0DB4928B00A55001C34EC /* QuizEngine.h */,
 				F8F0DB4A28B00A55001C34EC /* QuizEngine.docc */,
+				F8F0DB6228B00BDA001C34EC /* Flow.swift */,
 			);
 			path = QuizEngine;
 			sourceTree = "<group>";
@@ -80,7 +80,7 @@
 		F8F0DB5428B00A55001C34EC /* QuizEngineTests */ = {
 			isa = PBXGroup;
 			children = (
-				F8F0DB5528B00A55001C34EC /* QuizEngineTests.swift */,
+				F8F0DB6028B00ABC001C34EC /* FlowTest.swift */,
 			);
 			path = QuizEngineTests;
 			sourceTree = "<group>";
@@ -92,7 +92,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8F0DB5728B00A55001C34EC /* QuizEngine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +149,7 @@
 					};
 					F8F0DB4F28B00A55001C34EC = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -195,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8F0DB4B28B00A55001C34EC /* QuizEngine.docc in Sources */,
+				F8F0DB6328B00BDA001C34EC /* Flow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8F0DB5628B00A55001C34EC /* QuizEngineTests.swift in Sources */,
+				F8F0DB6128B00ABC001C34EC /* FlowTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,14 +396,22 @@
 		F8F0DB5E28B00A55001C34EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = EKZMJ583Y3;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.CRG.QuizEngineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -410,10 +419,17 @@
 		F8F0DB5F28B00A55001C34EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = EKZMJ583Y3;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.CRG.QuizEngineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
